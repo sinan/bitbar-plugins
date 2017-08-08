@@ -9,4 +9,4 @@
 # echo -n "Ł "; curl -s "https://api.coinbase.com/v2/prices/LTC-USD/spot" | egrep -o '"amount":"[0-9]+(\.)?([0-9]{0,2}")?' | sed 's/"amount"://'  | sed 's:^.\(.*\).$:\1:'
 
 # KRAKEN
-echo -n "Ł "; curl -s "https://api.kraken.com/0/public/Ticker?pair=XLTCZUSD" | /usr/local/bin/jq -r '.result.XLTCZUSD.c[0]' | xargs /usr/bin/printf "%.2f"
+echo -n "Ł "; curl -s "https://api.kraken.com/0/public/Ticker?pair=XLTCZUSD" | /usr/local/bin/jq -r '.result.XLTCZUSD.b[0]' | xargs /usr/bin/printf "%.2f"

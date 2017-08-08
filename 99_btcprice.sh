@@ -9,4 +9,4 @@
 # echo -n "฿ "; curl -s "https://api.coinbase.com/v2/prices/BTC-USD/spot" | egrep -o '"amount":"[0-9]+(\.)?([0-9]{0,2}")?' | sed 's/"amount"://'  | sed 's:^.\(.*\).$:\1:'
 
 # KRAKEN
-echo -n "฿ "; curl -s "https://api.kraken.com/0/public/Ticker?pair=XXBTZUSD" | /usr/local/bin/jq -r '.result.XXBTZUSD.c[0]' | xargs /usr/bin/printf "%.2f"
+echo -n "฿ "; curl -s "https://api.kraken.com/0/public/Ticker?pair=XXBTZUSD" | /usr/local/bin/jq -r '.result.XXBTZUSD.b[0]' | xargs /usr/bin/printf "%.2f"

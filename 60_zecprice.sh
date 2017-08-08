@@ -6,7 +6,7 @@
 # <bitbar.desc>Shows latest bidding price (in USD) for ZCash in Kraken exchange.</bitbar.desc>
 
 # KRAKEN
-echo -n "ⓩ "; curl -s "https://api.kraken.com/0/public/Ticker?pair=XZECZUSD" | /usr/local/bin/jq -r '.result.XZECZUSD.c[0]' | xargs /usr/bin/printf "%.2f"
+echo -n "ⓩ "; curl -s "https://api.kraken.com/0/public/Ticker?pair=XZECZUSD" | /usr/local/bin/jq -r '.result.XZECZUSD.b[0]' | xargs /usr/bin/printf "%.2f"
 
 # CryptoCompare
 # echo -n "ⓩ "; curl -s "https://min-api.cryptocompare.com/data/price?fsym=ZEC&tsyms=USD" | /usr/local/bin/jq -r '.USD' | xargs /usr/bin/printf "%.2f"
